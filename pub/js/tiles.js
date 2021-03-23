@@ -3,7 +3,14 @@
 // the class that contains the library and all its functions
 class TileConstructor {
     constructor() {
+        this.curr_tile = 0
         this.tiles = []
+    }
+
+    _getTileID() {
+        this.tiles.push(this.curr_tile)
+        this.curr_tile += 1
+        return this.curr_tile - 1
     }
 
     initCanvas(container) {
@@ -16,10 +23,12 @@ class TileConstructor {
         canvas.css('grid-auto-rows', '100px')
     }
 
+
     addTile(container, title = 'Title', img_src = '') {
         const canvas = $('#' + container)
 
         const tile = document.createElement('div')
+        tile.id = this._getTileID()
         tile.innerText = title
         tile.style.backgroundColor = 'white'
         tile.style.borderRadius = '5px'
