@@ -5,6 +5,7 @@ class TileConstructor {
     constructor() {
         this.curr_tile = 0
         this.tiles = []
+        this.container = ''
     }
 
     _getTileID() {
@@ -15,6 +16,7 @@ class TileConstructor {
 
     initCanvas(container) {
         const canvas = $('#' + container)
+        this.container = container
 
         canvas.css('display', 'grid')
         canvas.css('grid-gap', '30px')
