@@ -24,7 +24,7 @@ class TileConstructor {
     _shuffleArrayInPlace(a) {
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
+            [a[i], a[j]] = [a[j], a[i]]
         }
         return a
     }
@@ -40,7 +40,7 @@ class TileConstructor {
             return (aord > bord) ? 1 : -1
         })
 
-        let parent = document.getElementById(container);
+        let parent = document.getElementById(container)
         parent.innerHTML = ""
 
         for (let i = 0, l = toSort.length; i < l; i++) {
@@ -87,11 +87,11 @@ class TileConstructor {
         tile.style.boxShadow = '0 0 3pt 2pt black'
         tile.style.textAlign = 'center'
         tile.onmouseenter = function (event) {
-            const target = event.target;
+            const target = event.target
             target.style.boxShadow = '0 0 3pt 2pt cyan'
         }
         tile.onmouseleave = function (event) {
-            const target = event.target;
+            const target = event.target
             target.style.boxShadow = '0 0 3pt 2pt black'
         }
         tile.onclick = function (event) {
