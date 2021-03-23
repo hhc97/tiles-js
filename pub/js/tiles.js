@@ -9,7 +9,12 @@ class TileConstructor {
     }
 
     _getTileID() {
-        this.tiles.push(this.curr_tile)
+        this.tiles.push({
+            id: this.curr_tile,
+            innerText: '',
+            backgroundColor: 'white',
+            boxShadow: '0 0 3pt 2pt black'
+        })
         this.curr_tile += 1
         return this.curr_tile - 1
     }
