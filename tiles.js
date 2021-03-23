@@ -13,7 +13,7 @@ class TileConstructor {
         canvas.css('grid-gap', '30px')
         canvas.css('padding', '10px')
         canvas.css('grid-template-columns', '100px '.repeat(8))
-        canvas.css('grid-template-rows', '100px')
+        canvas.css('grid-auto-rows', '100px')
     }
 
     addTile(container, title = 'Title', img_src = '') {
