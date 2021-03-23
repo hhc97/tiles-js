@@ -26,6 +26,14 @@ class TileConstructor {
         tile.style.borderRadius = '5px'
         tile.style.boxShadow = '0 0 3pt 2pt black'
         tile.style.textAlign = 'center'
+        tile.onmouseenter = function (event) {
+            const target = event.target;
+            target.style.boxShadow = '0 0 3pt 2pt cyan'
+        }
+        tile.onmouseleave = function (event) {
+            const target = event.target;
+            target.style.boxShadow = '0 0 3pt 2pt black'
+        }
 
         if (img_src !== '') {
             const img = document.createElement('img')
