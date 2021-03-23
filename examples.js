@@ -1,7 +1,7 @@
 const lib = new TileConstructor()
 
 
-const d1 = 'demo'
+const d1 = 'demo1'
 lib.initCanvas(d1)
 lib.addTile(d1, 'Here')
 lib.addTile(d1, 'are')
