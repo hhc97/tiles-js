@@ -9,7 +9,6 @@ class TileConstructor {
     initCanvas(container) {
         const canvas = $('#' + container)
 
-        // canvas.css('background-color', 'cyan')
         canvas.css('display', 'grid')
         canvas.css('grid-gap', '30px')
         canvas.css('padding', '10px')
