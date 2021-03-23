@@ -34,6 +34,9 @@ class TileConstructor {
             const target = event.target;
             target.style.boxShadow = '0 0 3pt 2pt black'
         }
+        tile.onclick = function (event) {
+            alert('tile clicked (functionality not added yet)')
+        }
 
         if (img_src !== '') {
             const img = document.createElement('img')
