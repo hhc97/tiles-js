@@ -18,10 +18,18 @@ lib.addTile(d2, 'Lychee', 'https://images-prod.healthline.com/hlcmsresource/imag
 lib.addTile(d2, 'Avocado', 'https://www.tasteofhome.com/wp-content/uploads/2018/02/shutterstock_263066297.jpg', 'limegreen')
 lib.addTile(d2, 'Grapes!', 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/34/2019/07/marselan-wiki-min.jpg', 'purple')
 
+
+const demoPics = ['https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-mont-st-michel.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-chateau-de-chenonceau.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-calanques-national-park.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-amiens-cathedral.jpg']
+
 const d3 = 'demo3'
 lib.initCanvas(d3)
 for (let i = 1; i < 7; i++) {
-    lib.addTile(d3, i)
+    lib.addTile(d3, i, demoPics[i - 1])
 }
 
 // adding listeners to demo buttons
