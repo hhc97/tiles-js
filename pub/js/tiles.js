@@ -76,7 +76,7 @@ class TileConstructor {
     }
 
     // adds a tile to the canvas
-    addTile(container, title = 'Title', img_src = '') {
+    addTile(container, title = 'Title', img_src = '', hover_color = 'cyan') {
         const canvas = $('#' + container)
 
         const tile = document.createElement('div')
@@ -88,7 +88,7 @@ class TileConstructor {
         tile.style.textAlign = 'center'
         tile.onmouseenter = function (event) {
             const target = event.target
-            target.style.boxShadow = '0 0 3pt 2pt cyan'
+            target.style.boxShadow = `0 0 3pt 2pt ${hover_color}`
         }
         tile.onmouseleave = function (event) {
             const target = event.target
