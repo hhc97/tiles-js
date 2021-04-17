@@ -10,12 +10,14 @@
         this.container = container
         this.width = width
         this.height = height
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        const maxTile = Math.floor(vw / (width + 35))
 
         const canvas = $('#' + container)
         canvas.css('display', 'grid')
         canvas.css('grid-gap', '30px')
         canvas.css('padding', '10px')
-        canvas.css('grid-template-columns', `${width}px `.repeat(8))
+        canvas.css('grid-template-columns', `${width}px `.repeat(maxTile))
         canvas.css('grid-auto-rows', `${height}px`)
     }
 
