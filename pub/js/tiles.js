@@ -5,16 +5,18 @@
 (function (global, document, $) {
 
     // this function is currently only in the scope of the anonymous function at the moment.
-    function TileConstructor(container) {
+    function TileConstructor(container, width = 100, height = 100) {
         this.tiles = []
         this.container = container
+        this.width = width
+        this.height = height
 
         const canvas = $('#' + container)
         canvas.css('display', 'grid')
         canvas.css('grid-gap', '30px')
         canvas.css('padding', '10px')
-        canvas.css('grid-template-columns', '100px '.repeat(8))
-        canvas.css('grid-auto-rows', '100px')
+        canvas.css('grid-template-columns', `${width}px `.repeat(8))
+        canvas.css('grid-auto-rows', `${height}px`)
     }
 
     /* Start of private properties/functions */
