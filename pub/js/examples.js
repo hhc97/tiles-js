@@ -31,7 +31,7 @@ const demoPics = ['https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_c
 
 
 
-const lib3 = new TileConstructor('demo3', 100, 125)
+const lib3 = new TileConstructor('demo3', 180, 280)
 for (let i = 1; i < 14; i++) {
     lib3.addTile(i, demoPics[i - 1])
 }
