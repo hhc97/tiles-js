@@ -5,11 +5,12 @@
 (function (global, document, $) {
 
     // this function is currently only in the scope of the anonymous function at the moment.
-    function TileConstructor(container, width = 100, height = 100) {
+    function TileConstructor(container, width = 100, height = 100, animate = true) {
         this.tiles = []
         this.container = container
         this.width = width
         this.height = height
+        this.animate = animate
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         const maxTile = Math.floor(vw / (width + 35))
 
@@ -146,8 +147,10 @@
                 const target = event.target
                 target.style.boxShadow = `0 0 3pt 2pt ${hover_color}`
                 target.style.zIndex = 2
-                _animateChange(target.id, this.width, this.height,
-                    Math.ceil(1.11 * this.width), Math.ceil(1.11 * this.height))
+                if (this.animate) {
+                    _animateChange(target.id, this.width, this.height,
+                        Math.ceil(1.11 * this.width), Math.ceil(1.11 * this.height))
+                }
             }
             // add behavior for mouse hover events
             tile.onmouseleave = async (event) => {
@@ -155,8 +158,10 @@
                 target.style.boxShadow = '0 0 3pt 2pt black'
                 target.style.zIndex = 1
                 await sleep(15)
-                _animateChange(target.id, Math.ceil(1.11 * this.width),
-                    Math.ceil(1.11 * this.height), this.width, this.height)
+                if (this.animate) {
+                    _animateChange(target.id, Math.ceil(1.11 * this.width),
+                        Math.ceil(1.11 * this.height), this.width, this.height)
+                }
             }
             tile.onclick = function (event) {
                 alert('tile clicked (functionality not added yet)')
