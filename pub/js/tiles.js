@@ -154,11 +154,11 @@
                 if (this.animate) {
                     const tile = this.tiles.find((element) => element.id === target.id)
                     // first stop any current animations, then start the new one
-                    // clearInterval(tile.stopID)
+                    clearInterval(tile.stopID)
                     const currW = parseInt(target.style.width)
                     const currH = parseInt(target.style.height)
                     _animateChange(target.id, currW, currH,
-                        Math.ceil(2.22 * this.width), Math.ceil(2.22 * this.height), tile)
+                        Math.ceil(1.11 * this.width), Math.ceil(1.11 * this.height), tile)
                 }
             }
             tile.onmouseleave = (event) => {
@@ -168,7 +168,7 @@
                 if (this.animate) {
                     const tile = this.tiles.find((element) => element.id === target.id)
                     // first stop any current animations, then start the new one
-                    // clearInterval(tile.stopID)
+                    clearInterval(tile.stopID)
                     const currW = parseInt(target.style.width)
                     const currH = parseInt(target.style.height)
                     _animateChange(target.id, currW, currH, this.width, this.height, tile)
