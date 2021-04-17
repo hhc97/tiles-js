@@ -40,11 +40,12 @@
     }
 
     // helper to animate tile size changes
-    function _animateChange(id, startW, startH, endW, endH) {
+    function _animateChange(id, startW, startH, endW, endH, obj) {
         let elem = document.getElementById(id);
         let w = startW
         let h = startH
         let animateID = setInterval(animate, 5);
+        obj.stopID = animateID
         function animate() {
             if (w === endW && h === endH) {
                 clearInterval(animateID);
@@ -138,29 +139,39 @@
             const tile = document.createElement('div')
             tile.id = _getTileID()
             tile.innerText = title
+            tile.style.width = this.width + 'px'
+            tile.style.height = this.height + 'px'
             tile.style.backgroundColor = 'white'
             tile.style.borderRadius = '5px'
             tile.style.boxShadow = '0 0 3pt 2pt black'
             tile.style.textAlign = 'center'
             tile.draggable = 'true'
+            // add behavior for mouse hover events
             tile.onmouseenter = (event) => {
                 const target = event.target
                 target.style.boxShadow = `0 0 3pt 2pt ${hover_color}`
                 target.style.zIndex = 2
                 if (this.animate) {
-                    _animateChange(target.id, this.width, this.height,
-                        Math.ceil(1.11 * this.width), Math.ceil(1.11 * this.height))
+                    const tile = this.tiles.find((element) => element.id === target.id)
+                    // first stop any current animations, then start the new one
+                    // clearInterval(tile.stopID)
+                    const currW = parseInt(target.style.width)
+                    const currH = parseInt(target.style.height)
+                    _animateChange(target.id, currW, currH,
+                        Math.ceil(2.22 * this.width), Math.ceil(2.22 * this.height), tile)
                 }
             }
-            // add behavior for mouse hover events
-            tile.onmouseleave = async (event) => {
+            tile.onmouseleave = (event) => {
                 const target = event.target
                 target.style.boxShadow = '0 0 3pt 2pt black'
                 target.style.zIndex = 1
-                await sleep(15)
                 if (this.animate) {
-                    _animateChange(target.id, Math.ceil(1.11 * this.width),
-                        Math.ceil(1.11 * this.height), this.width, this.height)
+                    const tile = this.tiles.find((element) => element.id === target.id)
+                    // first stop any current animations, then start the new one
+                    // clearInterval(tile.stopID)
+                    const currW = parseInt(target.style.width)
+                    const currH = parseInt(target.style.height)
+                    _animateChange(target.id, currW, currH, this.width, this.height, tile)
                 }
             }
             tile.onclick = function (event) {
@@ -180,6 +191,10 @@
                 tile.append(img)
             }
             canvas.append(tile)
+            this.tiles.push({
+                id: tile.id,
+                stopID: -1
+            })
         }
     }
     global.TileConstructor = global.TileConstructor || TileConstructor
