@@ -5,11 +5,19 @@
 (function (global, document, $) {
 
     // this function is currently only in the scope of the anonymous function at the moment.
-    function TileConstructor() {
+    function TileConstructor(container) {
         this.tiles = []
-        this.container = ''
+        this.container = container
+
+        const canvas = $('#' + container)
+        canvas.css('display', 'grid')
+        canvas.css('grid-gap', '30px')
+        canvas.css('padding', '10px')
+        canvas.css('grid-template-columns', '100px '.repeat(8))
+        canvas.css('grid-auto-rows', '100px')
     }
 
+    /* Start of private properties/functions */
     let _curr_tile = 0
 
     function _getTileID() {
@@ -25,13 +33,12 @@
         }
         return a
     }
-
-
     /* End of private properties/functions */
 
     TileConstructor.prototype = {
         // sorts the tiles in the container by their ID
-        sort: function (container) {
+        sort: function () {
+            const container = this.container
             let toSort = document.getElementById(container).children
             toSort = Array.prototype.slice.call(toSort, 0)
 
@@ -50,7 +57,8 @@
         },
 
         // shuffles the tiles in the container by their ID
-        shuffle: function (container) {
+        shuffle: function () {
+            const container = this.container
             let toSort = document.getElementById(container).children
             toSort = Array.prototype.slice.call(toSort, 0)
 
@@ -64,21 +72,9 @@
             }
         },
 
-        // initializes the canvas div
-        initCanvas: function (container) {
-            const canvas = $('#' + container)
-            this.container = container
-
-            canvas.css('display', 'grid')
-            canvas.css('grid-gap', '30px')
-            canvas.css('padding', '10px')
-            canvas.css('grid-template-columns', '100px '.repeat(8))
-            canvas.css('grid-auto-rows', '100px')
-        },
-
         // adds a tile to the canvas
-        addTile: function (container, title = 'Title', img_src = '', hover_color = 'cyan') {
-            const canvas = $('#' + container)
+        addTile: function (title = 'Title', img_src = '', hover_color = 'cyan') {
+            const canvas = $('#' + this.container)
 
             const tile = document.createElement('div')
             tile.id = _getTileID()
