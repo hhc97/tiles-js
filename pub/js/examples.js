@@ -15,16 +15,24 @@ lib2.addTile('Avocado', 'https://www.tasteofhome.com/wp-content/uploads/2018/02/
 lib2.addTile('Grapes!', 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/34/2019/07/marselan-wiki-min.jpg', 'purple')
 
 
-const demoPics = ['https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
-    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-mont-st-michel.jpg',
-    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg',
-    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-chateau-de-chenonceau.jpg',
-    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-calanques-national-park.jpg',
-    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-amiens-cathedral.jpg']
+const demoPics = ['https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_card_spade_A.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/d/d5/Playing_card_heart_2.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/6/6b/Playing_card_club_3.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/2/20/Playing_card_diamond_4.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/9/94/Playing_card_spade_5.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/c/cd/Playing_card_heart_6.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/4/4b/Playing_card_club_7.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/7/78/Playing_card_diamond_8.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/e/e0/Playing_card_spade_9.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/9/98/Playing_card_heart_10.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/b/b7/Playing_card_club_J.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/0/0b/Playing_card_diamond_Q.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/9/9f/Playing_card_spade_K.svg']
+
 
 
 const lib3 = new TileConstructor('demo3')
-for (let i = 1; i < 7; i++) {
+for (let i = 1; i < 14; i++) {
     lib3.addTile(i, demoPics[i - 1])
 }
 
