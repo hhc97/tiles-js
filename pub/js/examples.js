@@ -12,7 +12,7 @@ lib.addTile(d1, 'tiles.')
 
 const d2 = 'demo2'
 lib.initCanvas(d2)
-lib.addTile(d2, 'Orange', 'https://www.quanta.org/thumbs/thumb-orange-640x480-orange.jpg', 'orange')
+lib.addTile(d2, 'Orange', 'https://lh3.googleusercontent.com/proxy/uPk_r8ogi6TMP6EeRxXIR4xi97eEiQXqHEcxFxiW4HV4zP7uEVoF6zXGzG-Fqh38iiufmWPpN6RkjZvio6Ezw6JLJa8niQhG50Y4KuPNMw', 'orange')
 lib.addTile(d2, 'Apple', 'https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?w=641&ssl=1', 'red')
 lib.addTile(d2, 'Lychee', 'https://images-prod.healthline.com/hlcmsresource/images/AN_images/lychees-1296x728-feature.jpg', 'pink')
 lib.addTile(d2, 'Avocado', 'https://www.tasteofhome.com/wp-content/uploads/2018/02/shutterstock_263066297.jpg', 'limegreen')
