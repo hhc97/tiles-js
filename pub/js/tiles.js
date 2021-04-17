@@ -147,15 +147,16 @@
                 target.style.boxShadow = `0 0 3pt 2pt ${hover_color}`
                 target.style.zIndex = 2
                 _animateChange(target.id, this.width, this.height,
-                    Math.ceil(1.2 * this.width), Math.ceil(1.2 * this.height))
+                    Math.ceil(1.11 * this.width), Math.ceil(1.11 * this.height))
             }
+            // add behavior for mouse hover events
             tile.onmouseleave = async (event) => {
                 const target = event.target
                 target.style.boxShadow = '0 0 3pt 2pt black'
                 target.style.zIndex = 1
-                await sleep(10)
-                _animateChange(target.id, Math.ceil(1.2 * this.width),
-                    Math.ceil(1.2 * this.height), this.width, this.height)
+                await sleep(15)
+                _animateChange(target.id, Math.ceil(1.11 * this.width),
+                    Math.ceil(1.11 * this.height), this.width, this.height)
             }
             tile.onclick = function (event) {
                 alert('tile clicked (functionality not added yet)')
