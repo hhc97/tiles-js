@@ -13,7 +13,6 @@
     let _curr_tile = 0
 
     function _getTileID() {
-        console.log(_curr_tile);
         _curr_tile++
         return _curr_tile - 1
     }
