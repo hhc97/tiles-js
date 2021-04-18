@@ -11,3 +11,12 @@ lib.addTile({
 lib.addTile({
     img_src: 'static/tiles_word.PNG'
 })
+
+
+const lib2 = new TileConstructor('demo2', 200, 100, true, false)
+
+lib2.addTile({ title: 'API' })
+lib2.addTile({
+    title: 'Usage examples',
+    clickLink: './examples.html'
+})

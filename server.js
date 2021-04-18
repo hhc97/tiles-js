@@ -1,23 +1,13 @@
 /* server.js - Express server*/
 'use strict';
 const log = console.log
-log('Express server')
 
 const express = require('express')
 const app = express();
-
 const path = require('path');
 
-// Setting up a static directory for the files in /pub
-// using Express middleware.
-// Don't put anything in /pub that you don't want the public to have access to!
+// serve access to /pub
 app.use(express.static(path.join(__dirname, '/pub')))
-
-
-// app.get('/', (req, res) => {
-//     // send the examples file
-//     res.sendFile(__dirname + '/pub/examples.html')
-// })
 
 
 // will use an 'environmental variable', process.env.PORT, for deployment.
