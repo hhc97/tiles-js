@@ -1,6 +1,6 @@
 "use strict"
 
-const lib = new TileConstructor('demo1', 200, 100, true, true)
+const lib = new TileConstructor('demo1', 300, 150, true, true)
 
 lib.addTile({
     img_src: 'static/welcome_word.PNG'
