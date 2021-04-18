@@ -14,10 +14,10 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, '/pub')))
 
 
-app.get('/', (req, res) => {
-    // send the examples file
-    res.sendFile(__dirname + '/pub/examples.html')
-})
+// app.get('/', (req, res) => {
+//     // send the examples file
+//     res.sendFile(__dirname + '/pub/examples.html')
+// })
 
 
 // will use an 'environmental variable', process.env.PORT, for deployment.
