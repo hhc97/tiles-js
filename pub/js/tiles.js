@@ -12,6 +12,7 @@
         this.height = height
         this.animate = animate
         this.color_cycle = cycle
+        this.disabled = false
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         const maxTile = Math.floor(vw / (width + 35))
 
@@ -121,6 +122,38 @@
     /* End of private properties/functions */
 
     TileConstructor.prototype = {
+        // disables a certain tile
+        disable: function (tileid) {
+            const tile = this.tiles.find((element) => element.id === tileid)
+            if (tile) {
+                tile.disabled = true
+                return true
+            }
+            return false
+        },
+        // disables all tiles
+        disableAll: function () {
+            this.disabled = true
+        },
+        // enables a certain tile
+        enable: function (tileid) {
+            const tile = this.tiles.find((element) => element.id === tileid)
+            if (tile) {
+                tile.disabled = false
+                return true
+            }
+            return false
+        },
+        // enables all tiles, with an option to propagate
+        enableAll: function (propagate = false) {
+            this.disabled = false
+            if (propagate) {
+                for (let i = 0; i < this.tiles.length; i++) {
+                    const tile = this.tiles[i];
+                    tile.disabled = false
+                }
+            }
+        },
         // sorts the tiles in the container by their ID
         sort: function () {
             const container = this.container
@@ -212,20 +245,25 @@
             }
             if (clickLink) {
                 tile.onclick = (event) => {
-                    window.open(clickLink)
+                    const tile = this.tiles.find((element) => element.id === event.target.id)
+                    if (!this.disabled && !tile.disabled) {
+                        window.open(clickLink)
+                    }
                 }
             } else if (alt_img) {
                 tile.onclick = (event) => {
                     const target = event.target
                     const tile = this.tiles.find((element) => element.id === target.id)
-                    const tileImg = target.children[0]
-                    const prevImg = tile.curr_img
-                    const nextImg = tile.alt_img
-                    tile.alt_img = prevImg
-                    tile.curr_img = nextImg
-                    tileImg.src = nextImg
-                    if (tile.click_callback) {
-                        tile.click_callback(tile)
+                    if (!this.disabled && !tile.disabled) {
+                        const tileImg = target.children[0]
+                        const prevImg = tile.curr_img
+                        const nextImg = tile.alt_img
+                        tile.alt_img = prevImg
+                        tile.curr_img = nextImg
+                        tileImg.src = nextImg
+                        if (tile.click_callback) {
+                            tile.click_callback(tile)
+                        }
                     }
                 }
             }
@@ -248,11 +286,13 @@
                 stopID: -1,
                 alt_img: alt_img,
                 curr_img: img_src,
-                click_callback: click_callback
+                click_callback: click_callback,
+                disabled: false
             })
             if (this.color_cycle) {
                 _animateColor(tile.id)
             }
+            return tile.id
         }
     }
     global.TileConstructor = global.TileConstructor || TileConstructor
