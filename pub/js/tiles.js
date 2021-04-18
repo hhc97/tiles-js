@@ -159,6 +159,7 @@
 
         // adds a tile to the canvas
         addTile: function (params = null) {
+            if (params === null) { params = {} }
             const canvas = $('#' + this.container)
             const title = params.title === undefined ? '' : params.title
             const img_src = !params.img_src ? '' : params.img_src
