@@ -158,8 +158,12 @@
         },
 
         // adds a tile to the canvas
-        addTile: function (title = 'Title', img_src = '', hover_color = 'cyan', clickLink = '') {
+        addTile: function (params = null) {
             const canvas = $('#' + this.container)
+            const title = params.title === undefined ? '' : params.title
+            const img_src = !params.img_src ? '' : params.img_src
+            const hover_color = !params.hover_color ? 'cyan' : params.hover_color
+            const clickLink = !params.clickLink ? '' : params.clickLink
 
             const tile = document.createElement('div')
             tile.id = _getTileID()
