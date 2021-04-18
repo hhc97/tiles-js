@@ -80,7 +80,10 @@
                 const newB = Math.abs((parseInt(components[2]) + _getRandomInt(change))) % 255
                 elem.style.boxShadow = `0 0 3pt 2pt rgb(${newR} ${newG} ${newB})`
             } else {
-                elem.style.boxShadow = `0 0 3pt 2pt rgb(100, 150, 200)`
+                const r = Math.abs(_getRandomInt(255))
+                const g = Math.abs(_getRandomInt(255))
+                const b = Math.abs(_getRandomInt(255))
+                elem.style.boxShadow = `0 0 3pt 2pt rgb(${r}, ${g}, ${b})`
             }
         }
     }
