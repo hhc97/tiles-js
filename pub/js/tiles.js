@@ -165,6 +165,8 @@
             const img_src = !params.img_src ? '' : params.img_src
             const hover_color = !params.hover_color ? 'cyan' : params.hover_color
             const clickLink = !params.clickLink ? '' : params.clickLink
+            const alt_img = !params.alt_img ? '' : params.alt_img
+            const click_callback = !params.click_callback ? null : params.click_callback
 
             const tile = document.createElement('div')
             tile.id = _getTileID()
@@ -212,6 +214,20 @@
                 tile.onclick = (event) => {
                     window.open(clickLink)
                 }
+            } else if (alt_img) {
+                tile.onclick = (event) => {
+                    const target = event.target
+                    const tile = this.tiles.find((element) => element.id === target.id)
+                    const tileImg = target.children[0]
+                    const prevImg = tileImg.src
+                    const nextImg = tile.alt_img
+                    tile.alt_img = prevImg
+                    tile.curr_img = nextImg
+                    tileImg.src = nextImg
+                    if (tile.click_callback) {
+                        tile.click_callback(tile)
+                    }
+                }
             }
             // add drag and drop functionality
             tile.ondrop = drop
@@ -229,7 +245,10 @@
             canvas.append(tile)
             this.tiles.push({
                 id: tile.id,
-                stopID: -1
+                stopID: -1,
+                alt_img: alt_img,
+                curr_img: img_src,
+                click_callback: click_callback
             })
             if (this.color_cycle) {
                 _animateColor(tile.id)
