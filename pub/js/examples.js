@@ -81,6 +81,7 @@ function sleep(ms) {
 let prev_tile = null
 
 async function test(data) {
+    lib4.disable(data.id)
     if (!prev_tile) {
         prev_tile = {
             id: data.id,
@@ -93,10 +94,15 @@ async function test(data) {
         score.innerText = parseInt(score.innerText) + 10
         prev_tile = null
     } else {
+        lib4.disableAll()
         await sleep(800)
+        lib4.enableAll()
         if (prev_tile && data) {
-            document.getElementById(prev_tile.id).click()
-            document.getElementById(data.id).click()
+            lib4.flip(prev_tile.id)
+            lib4.flip(data.id)
+            lib4.enable(prev_tile.id)
+            lib4.enable(data.id)
+            score.innerText = parseInt(score.innerText) - 5
         }
         prev_tile = null
     }
