@@ -6,6 +6,11 @@ lib.addTile({ title: 'are' })
 lib.addTile({ title: 'some' })
 lib.addTile({ title: 'tiles.' })
 
+const button = $('#add_demo1')
+button[0].addEventListener("click", function () {
+    lib.addTile({ title: 'new tile' })
+})
+
 
 const lib2 = new TileConstructor('demo2', 200, 200)
 lib2.addTile({
@@ -59,11 +64,6 @@ for (let i = 1; i < 14; i++) {
     })
 }
 
-// adding listeners to demo buttons
-const button = $('#add_demo1')
-button[0].addEventListener("click", function () {
-    lib.addTile({ title: 'new tile' })
-})
 const shuffle = $('#shuffle')
 shuffle[0].addEventListener("click", function () {
     lib3.shuffle()
@@ -72,3 +72,50 @@ const sort = $('#sort')
 sort[0].addEventListener("click", function () {
     lib3.sort()
 })
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+let prev_tile = null
+
+async function test(data) {
+    if (!prev_tile) {
+        prev_tile = {
+            id: data.id,
+            img: data.curr_img
+        }
+        return
+    }
+    let score = document.getElementById('score')
+    if (data.id !== prev_tile.id && data.curr_img === prev_tile.img) {
+        score.innerText = parseInt(score.innerText) + 10
+        prev_tile = null
+    } else {
+        await sleep(800)
+        if (prev_tile && data) {
+            document.getElementById(prev_tile.id).click()
+            document.getElementById(data.id).click()
+        }
+        prev_tile = null
+    }
+}
+
+const matchPics = ['static/cat_ball.jpg',
+    'static/cat_walk.jpg',
+    'static/cat_walk.jpg',
+    'static/cat_lie.jpg',
+    'static/cat_ball.jpg',
+    'static/cat_lie.jpg']
+
+const lib4 = new TileConstructor('demo4', 200, 200)
+for (let i = 0; i < matchPics.length; i++) {
+    lib4.addTile({
+        title: 'Click me!',
+        img_src: 'static/question_mark.PNG',
+        alt_img: matchPics[i],
+        click_callback: test
+    })
+
+}
