@@ -158,7 +158,7 @@
         },
 
         // adds a tile to the canvas
-        addTile: function (title = 'Title', img_src = '', hover_color = 'cyan') {
+        addTile: function (title = 'Title', img_src = '', hover_color = 'cyan', clickLink = '') {
             const canvas = $('#' + this.container)
 
             const tile = document.createElement('div')
@@ -203,8 +203,10 @@
                     _animateChange(target.id, currW, currH, this.width, this.height, tile)
                 }
             }
-            tile.onclick = function (event) {
-                alert('tile clicked (functionality not added yet)')
+            if (clickLink) {
+                tile.onclick = (event) => {
+                    window.open(clickLink)
+                }
             }
             // add drag and drop functionality
             tile.ondrop = drop
