@@ -190,6 +190,20 @@
             }
         },
 
+        // flips a tile to it's alt image
+        flip: function (tileid) {
+            const tile = this.tiles.find((element) => element.id === tileid)
+            if (tile && tile.alt_img) {
+                const target = document.getElementById(tileid)
+                const tileImg = target.children[0]
+                const prevImg = tile.curr_img
+                const nextImg = tile.alt_img
+                tile.alt_img = prevImg
+                tile.curr_img = nextImg
+                tileImg.src = nextImg
+            }
+        },
+
         // adds a tile to the canvas
         addTile: function (params = null) {
             if (params === null) { params = {} }
@@ -255,12 +269,7 @@
                     const target = event.target
                     const tile = this.tiles.find((element) => element.id === target.id)
                     if (!this.disabled && !tile.disabled) {
-                        const tileImg = target.children[0]
-                        const prevImg = tile.curr_img
-                        const nextImg = tile.alt_img
-                        tile.alt_img = prevImg
-                        tile.curr_img = nextImg
-                        tileImg.src = nextImg
+                        this.flip(target.id)
                         if (tile.click_callback) {
                             tile.click_callback(tile)
                         }
