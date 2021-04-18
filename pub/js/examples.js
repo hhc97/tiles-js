@@ -1,6 +1,6 @@
 "use strict"
 
-const lib = new TileConstructor('demo1')
+const lib = new TileConstructor('demo1', 100, 100, true, true)
 lib.addTile('Here')
 lib.addTile('are')
 lib.addTile('some')

@@ -5,12 +5,13 @@
 (function (global, document, $) {
 
     // this function is currently only in the scope of the anonymous function at the moment.
-    function TileConstructor(container, width = 100, height = 100, animate = true) {
+    function TileConstructor(container, width = 100, height = 100, animate = true, cycle = false) {
         this.tiles = []
         this.container = container
         this.width = width
         this.height = height
         this.animate = animate
+        this.color_cycle = cycle
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         const maxTile = Math.floor(vw / (width + 35))
 
@@ -58,6 +59,32 @@
         }
     }
 
+    // helper to get a random int between -max and max
+    function _getRandomInt(max) {
+        const rnd = Math.floor(Math.random() * max)
+        const sign = Math.random()
+        return sign > 0.5 ? -rnd : rnd
+    }
+
+    // helper to animate tile colors
+    function _animateColor(id) {
+        let elem = document.getElementById(id);
+        setInterval(animate, 200);
+        function animate() {
+            const currShadow = elem.style.boxShadow
+            const components = [...currShadow.matchAll(/[\d]+[,)]/g)]
+            if (components.length === 3) {
+                const change = 20
+                const newR = Math.abs((parseInt(components[0]) + _getRandomInt(change))) % 255
+                const newG = Math.abs((parseInt(components[1]) + _getRandomInt(change))) % 255
+                const newB = Math.abs((parseInt(components[2]) + _getRandomInt(change))) % 255
+                elem.style.boxShadow = `0 0 3pt 2pt rgb(${newR} ${newG} ${newB})`
+            } else {
+                elem.style.boxShadow = `0 0 3pt 2pt rgb(100, 150, 200)`
+            }
+        }
+    }
+
     // functions to help with drag and drop functionality
     function drag(ev) {
         ev.dataTransfer.setData("dragID", ev.target.id);
@@ -87,11 +114,6 @@
                 parent.appendChild(toSort[i])
             }
         }
-    }
-
-    // helper for getting a short delay in code execution
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
     }
     /* End of private properties/functions */
 
@@ -149,7 +171,9 @@
             // add behavior for mouse hover events
             tile.onmouseenter = (event) => {
                 const target = event.target
-                target.style.boxShadow = `0 0 3pt 2pt ${hover_color}`
+                if (!this.color_cycle) {
+                    target.style.boxShadow = `0 0 3pt 2pt ${hover_color}`
+                }
                 target.style.zIndex = 2
                 if (this.animate) {
                     const tile = this.tiles.find((element) => element.id === target.id)
@@ -163,7 +187,9 @@
             }
             tile.onmouseleave = (event) => {
                 const target = event.target
-                target.style.boxShadow = '0 0 3pt 2pt black'
+                if (!this.color_cycle) {
+                    target.style.boxShadow = '0 0 3pt 2pt black'
+                }
                 target.style.zIndex = 1
                 if (this.animate) {
                     const tile = this.tiles.find((element) => element.id === target.id)
@@ -195,6 +221,9 @@
                 id: tile.id,
                 stopID: -1
             })
+            if (this.color_cycle) {
+                _animateColor(tile.id)
+            }
         }
     }
     global.TileConstructor = global.TileConstructor || TileConstructor
