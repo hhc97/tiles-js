@@ -219,7 +219,7 @@
                     const target = event.target
                     const tile = this.tiles.find((element) => element.id === target.id)
                     const tileImg = target.children[0]
-                    const prevImg = tileImg.src
+                    const prevImg = tile.curr_img
                     const nextImg = tile.alt_img
                     tile.alt_img = prevImg
                     tile.curr_img = nextImg
