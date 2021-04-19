@@ -85,7 +85,7 @@ The parameters are provided in the form of a javascript object, so optional para
 
 ## API methods
 Once you have created an instance of `Tiles`, these are the API methods that can be called and their available options:
-- Tiles.`addTile({options})`
+- Tiles.`addTile({options})` returns `the ID of the added tile`.
     - `title`
         - `Type`: `string`
         - `Default value`: `''`
