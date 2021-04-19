@@ -21,14 +21,16 @@
         this.disabled = false
 
         const tileGap = params.tile_gap === undefined ? 30 : params.tile_gap
+        const num_horizontal = params.num_horizontal === undefined ? Infinity : params.num_horizontal
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        const maxTile = Math.floor((vw - 20) / (this.width + tileGap))
+        const max_fit = Math.floor((vw - 20) / (this.width + tileGap))
+        const repeat_no = Math.min(num_horizontal, max_fit)
 
         const canvas = $('#' + this.container)
         canvas.css('display', 'grid')
         canvas.css('grid-gap', `${tileGap}px`)
         canvas.css('padding', '10px')
-        canvas.css('grid-template-columns', `${this.width}px `.repeat(maxTile))
+        canvas.css('grid-template-columns', `${this.width}px `.repeat(repeat_no))
         canvas.css('grid-auto-rows', `${this.height}px`)
     }
 
