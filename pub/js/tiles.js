@@ -19,12 +19,13 @@
         this.color_cycle = params.color_cycle === undefined ? false : params.color_cycle
         this.disabled = false
 
+        const tileGap = params.tile_gap === undefined ? 30 : params.tile_gap
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        const maxTile = Math.floor(vw / (this.width + 35))
+        const maxTile = Math.floor((vw - 20) / (this.width + tileGap))
 
         const canvas = $('#' + this.container)
         canvas.css('display', 'grid')
-        canvas.css('grid-gap', '30px')
+        canvas.css('grid-gap', `${tileGap}px`)
         canvas.css('padding', '10px')
         canvas.css('grid-template-columns', `${this.width}px `.repeat(maxTile))
         canvas.css('grid-auto-rows', `${this.height}px`)
