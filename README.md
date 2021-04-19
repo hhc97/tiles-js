@@ -126,3 +126,24 @@ Once you have created an instance of `Tiles`, these are the API methods that can
         - `Type`: `string or number (integer)`
         - `Optional`: `no`
         - `Description`: The ID of the tile to flip.
+- Tiles.`disable(tileid)`
+    - A tile can be disabled if the developer wants to limit user interaction with the tile. A disabled tile will not perform any onclick actions.
+    - `tileid`
+        - `Type`: `string or number (integer)`
+        - `Optional`: `no`
+        - `Description`: The ID of the tile to disable.
+- Tiles.`disableAll()`
+    - Disables all tiles in the section.
+- Tiles.`enable(tileid)`
+    - Reverses the effects of `disable()`. Note that if the section has been disabled by `disableAll()`, then simply calling enable will not work.
+    - `tileid`
+        - `Type`: `string or number (integer)`
+        - `Optional`: `no`
+        - `Description`: The ID of the tile to enable.
+- Tiles.`enableAll(propagate)`
+    - Enables all tiles in the section.
+    - `propagate`
+        - `Type`: `boolean`
+        - `Optional`: `no`
+        - `Default value`: `false`
+        - `Description`: This parameter specifies whether to propagate the effects of the `enableAll()` call to all the tiles in this section. If a tile has been disabled by a call to `disable()`, calling `enableAll(false)` will not enable that tile, but calling `enableAll(true)` will.
