@@ -28,7 +28,8 @@ const lib2 = new TileConstructor({
 
 lib2.addTile({
     title: 'API / Documentation',
-    img_src: 'static/documentation.PNG'
+    img_src: 'static/documentation.PNG',
+    clickLink: './api-v1.html'
 })
 lib2.addTile({
     title: 'Usage examples',
