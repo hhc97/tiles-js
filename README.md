@@ -41,9 +41,42 @@ new Tiles({
     num_horizontal: 2
 })
 ```
-The parameters are provided in the form of a javascript object, so optional parameters can be left if desired.  
-**Required options**
+The parameters are provided in the form of a javascript object, so optional parameters can be left out if desired.  
+**Required parameters**
 - **container**
     - `Type`: `string`
     - `Default value`: `none`
     - `Description`: In order to use tiles.js, you must provide it a `<div>` element with a unique `id` in which you want to display tiles.
+**Optional parameters**
+- **width**
+    - `Type`: `number (integer)`
+    - `Default value`: `100`
+    - `Description`: The width you want the tiles in this section to be.
+- **height**
+    - `Type`: `number (integer)`
+    - `Default value`: `100`
+    - `Description`: The height you want the tiles in this section to be.
+- **animate**
+    - `Type`: `boolean`
+    - `Default value`: `true`
+    - `Description`: On hover, you can choose to allow the tiles to slightly expand in an animation. This gives the user a visual cue that the tile is being hovered across. The content in the tile will expand along with the tile.
+- **animate_factor**
+    - `Type`: `number (float)`
+    - `Default value`: `1.05`
+    - `Description`: If `animate` is set to `true`, then you can optionally specify how much you want your tiles to expand when they are being hovered over. The default value of 5% looks good in most situations, but you have the option of choosing your own expansion factor.
+- **color_cycle**
+    - `Type`: `boolean`
+    - `Default value`: `false`
+    - `Description`: This option enables the color gradient around each tile to constantly change color. The colors are generated randomly and slowly change randomly as well. It is useful for when the theme of the website is a little less serious!
+- **nodrag**
+    - `Type`: `boolean`
+    - `Default value`: `false`
+    - `Description`: By default, tiles in a section can be dragged around and the user can swap the positions of tiles by dragging and dropping. Setting this option to `true` will prevent tiles from being dragged, which is useful for when you have tiles that must display content in a certain order.
+- **tile_gap**
+    - `Type`: `number (integer)`
+    - `Default value`: `30`
+    - `Description`: This option adjusts the width of the gap between tiles.
+- **num_horizontal**
+    - `Type`: `number (integer)`
+    - `Default value`: `Infinity`
+    - `Description`: This option specifies the maximum number of horizontally adjacent tiles in the current section. Note that if the viewport width cannot accomodate so many tiles, then this value is automatically capped.
