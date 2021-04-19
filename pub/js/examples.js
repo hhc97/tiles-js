@@ -139,5 +139,28 @@ for (let i = 0; i < matchPics.length; i++) {
         alt_img: matchPics[i],
         click_callback: test
     })
-
 }
+
+
+const lib5 = new Tiles({
+    container: 'demo5',
+    height: 30,
+    width: 30
+})
+lib5.addTile({
+    img_src: 'https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png',
+    clickLink: 'https://github.com/',
+    hover_color: 'gray'
+})
+
+lib5.addTile({
+    img_src: 'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png',
+    clickLink: 'https://google.com/',
+    hover_color: 'gray'
+})
+
+lib5.addTile({
+    img_src: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Stack_Overflow_icon.svg',
+    clickLink: 'https://stackoverflow.com/',
+    hover_color: 'gray'
+})
