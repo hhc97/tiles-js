@@ -87,32 +87,32 @@ The parameters are provided in the form of a javascript object, so optional para
 Once you have created an instance of `Tiles`, these are the API methods that can be called and their available options:
 - Tiles.`addTile({options})`
     - `title`
-        - `Type`: ``
-        - `Default value`: ``
-        - `Optional`: ``
-        - `Description`: 
-    - `title`
-        - `Type`: ``
-        - `Default value`: ``
-        - `Optional`: ``
-        - `Description`: 
-    - `title`
-        - `Type`: ``
-        - `Default value`: ``
-        - `Optional`: ``
-        - `Description`: 
-    - `title`
-        - `Type`: ``
-        - `Default value`: ``
-        - `Optional`: ``
-        - `Description`: 
-    - `title`
-        - `Type`: ``
-        - `Default value`: ``
-        - `Optional`: ``
-        - `Description`: 
-    - `title`
-        - `Type`: ``
-        - `Default value`: ``
-        - `Optional`: ``
-        - `Description`: 
+        - `Type`: `string`
+        - `Default value`: `''`
+        - `Optional`: `yes`
+        - `Description`: This specifies the title of the newly added tile, which is the text that appears on top of each tile. If this is not provided, no title will appear.
+    - `img_src`
+        - `Type`: `string`
+        - `Default value`: `''`
+        - `Optional`: `yes`
+        - `Description`: This specifies the source of the image that will appear in the tile. Specifying an image is optional.
+    - `hover_color`
+        - `Type`: `string`
+        - `Default value`: `cyan`
+        - `Optional`: `yes`
+        - `Description`: This specifies the color of the outline that will appear when the tile is hovered over.
+    - `clickLink`
+        - `Type`: `string`
+        - `Default value`: `''`
+        - `Optional`: `yes`
+        - `Description`: This specifies an optional link that can be opened when the tile is clicked.
+    - `alt_img`
+        - `Type`: `string`
+        - `Default value`: `''`
+        - `Optional`: `yes`
+        - `Description`: This specifies an alternative image that can be shown when the tile is clicked. This option cannot be used in conjuction with `clickLink`.
+    - `click_callback`
+        - `Type`: `function`
+        - `Default value`: `null`
+        - `Optional`: `yes`
+        - `Description`: This specifies a function that should be called when the tile is clicked. The function must take 1 argument. Upon being clicked, the function will be called as `f(tile)`, where `tile` will represent the current state of the tile.
