@@ -47,6 +47,7 @@ The parameters are provided in the form of a javascript object, so optional para
     - `Type`: `string`
     - `Default value`: `none`
     - `Description`: In order to use tiles.js, you must provide it a `<div>` element with a unique `id` in which you want to display tiles.  
+
 **Optional parameters**
 - **width**
     - `Type`: `number (integer)`
