@@ -116,3 +116,9 @@ Once you have created an instance of `Tiles`, these are the API methods that can
         - `Default value`: `null`
         - `Optional`: `yes`
         - `Description`: This specifies a function that should be called when the tile is clicked. The function must take 1 argument. Upon being clicked, the function will be called as `f(tile)`, where `tile` will represent the current state of the tile.
+- Tiles.`sort()`
+    - Sorts the tiles in the current section by order of their creation.
+- Tiles.`shuffle()`
+    - Shuffles the tiles in the current section randomly.
+- Tiles.`flip()`
+    - A tile may have a secondary image to show. The flip method swaps the current displayed image for the secondary image.
