@@ -13,7 +13,7 @@ Final submission deployed at -> [https://tiles-js.herokuapp.com/](https://tiles-
 
 ## Getting started
 To get started with tiles.js, you'll need to include [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and [tiles.js](https://tiles-js.herokuapp.com/js/tiles.js) in your HTML page as shown below:
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,7 @@ Note that you **must** create a new instance of `Tiles` for each section of tile
 
 ## Constructors
 There is only one constructor required to use tiles.js, and it has one required value, with a few other optional parameters. A constructor call with every possible option is shown below:
-```
+```javascript
 new Tiles({
     container: 'demo1',
     width: 100,
