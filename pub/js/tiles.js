@@ -5,24 +5,24 @@
 (function (global, document, $) {
 
     // this function is currently only in the scope of the anonymous function at the moment.
-    function TileConstructor(params) {
+    function TileConstructor(options) {
         this.tiles = []
 
-        // set params
-        this.container = params.container
+        // set options
+        this.container = options.container
         if (this.container === undefined) {
             throw 'Container must be specified!'
         }
-        this.width = params.width === undefined ? 100 : params.width
-        this.height = params.height === undefined ? 100 : params.height
-        this.animate = params.animate === undefined ? true : params.animate
-        this.animate_factor = params.animate_factor === undefined ? 1.05 : params.animate_factor
-        this.color_cycle = params.color_cycle === undefined ? false : params.color_cycle
-        this.nodrag = params.nodrag === undefined ? false : true
+        this.width = options.width === undefined ? 100 : options.width
+        this.height = options.height === undefined ? 100 : options.height
+        this.animate = options.animate === undefined ? true : options.animate
+        this.animate_factor = options.animate_factor === undefined ? 1.05 : options.animate_factor
+        this.color_cycle = options.color_cycle === undefined ? false : options.color_cycle
+        this.nodrag = options.nodrag === undefined ? false : true
         this.disabled = false
 
-        const tileGap = params.tile_gap === undefined ? 30 : params.tile_gap
-        const num_horizontal = params.num_horizontal === undefined ? Infinity : params.num_horizontal
+        const tileGap = options.tile_gap === undefined ? 30 : options.tile_gap
+        const num_horizontal = options.num_horizontal === undefined ? Infinity : options.num_horizontal
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         const max_fit = Math.floor((vw - 20) / (this.width + tileGap))
         const repeat_no = Math.min(num_horizontal, max_fit)
@@ -216,15 +216,15 @@
         },
 
         // adds a tile to the canvas
-        addTile: function (params = null) {
-            if (params === null) { params = {} }
+        addTile: function (options = null) {
+            if (options === null) { options = {} }
             const canvas = $('#' + this.container)
-            const title = params.title === undefined ? '' : params.title
-            const img_src = !params.img_src ? '' : params.img_src
-            const hover_color = !params.hover_color ? 'cyan' : params.hover_color
-            const clickLink = !params.clickLink ? '' : params.clickLink
-            const alt_img = !params.alt_img ? '' : params.alt_img
-            const click_callback = !params.click_callback ? null : params.click_callback
+            const title = options.title === undefined ? '' : options.title
+            const img_src = !options.img_src ? '' : options.img_src
+            const hover_color = !options.hover_color ? 'cyan' : options.hover_color
+            const clickLink = !options.clickLink ? '' : options.clickLink
+            const alt_img = !options.alt_img ? '' : options.alt_img
+            const click_callback = !options.click_callback ? null : options.click_callback
 
             const tile = document.createElement('div')
             tile.id = _getTileID()
