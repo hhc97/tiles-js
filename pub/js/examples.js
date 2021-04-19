@@ -1,6 +1,6 @@
 "use strict"
 
-const lib = new TileConstructor({
+const lib = new Tiles({
     container: 'demo1',
     color_cycle: true,
     animate_factor: 1.1
@@ -16,7 +16,7 @@ button[0].addEventListener("click", function () {
 })
 
 
-const lib2 = new TileConstructor({
+const lib2 = new Tiles({
     container: 'demo2',
     width: 200,
     height: 200
@@ -64,7 +64,7 @@ const demoPics = ['https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_c
     'https://upload.wikimedia.org/wikipedia/commons/9/9f/Playing_card_spade_K.svg']
 
 
-const lib3 = new TileConstructor({
+const lib3 = new Tiles({
     container: 'demo3',
     width: 180,
     height: 280
@@ -127,7 +127,7 @@ const matchPics = ['static/cat_ball.jpg',
     'static/cat_ball.jpg',
     'static/cat_lie.jpg']
 
-const lib4 = new TileConstructor({
+const lib4 = new Tiles({
     container: 'demo4',
     width: 200,
     height: 200

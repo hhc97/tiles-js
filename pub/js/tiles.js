@@ -318,6 +318,6 @@
             return tile.id
         }
     }
-    global.TileConstructor = global.TileConstructor || TileConstructor
+    global.Tiles = global.Tiles || TileConstructor
 
 })(window, window.document, $);
