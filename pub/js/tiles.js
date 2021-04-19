@@ -292,7 +292,7 @@
                 const img = document.createElement('img')
                 img.src = img_src
                 img.style.width = '100%'
-                title ? img.style.height = '84%' : img.style.height = '100%'
+                title ? img.style.height = '80%' : img.style.height = '100%'
                 img.style.pointerEvents = 'none'
                 tile.append(img)
             }
