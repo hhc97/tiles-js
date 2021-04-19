@@ -1,6 +1,9 @@
 "use strict"
 
-const lib = new TileConstructor('demo1', 100, 100, true, true)
+const lib = new TileConstructor({
+    container: 'demo1',
+    color_cycle: true
+})
 lib.addTile({ title: 'Here' })
 lib.addTile({ title: 'are' })
 lib.addTile({ title: 'some' })
@@ -12,7 +15,11 @@ button[0].addEventListener("click", function () {
 })
 
 
-const lib2 = new TileConstructor('demo2', 200, 200)
+const lib2 = new TileConstructor({
+    container: 'demo2',
+    width: 200,
+    height: 200
+})
 lib2.addTile({
     title: 'Orange',
     img_src: 'https://www.mz-store.com/blog/wp-content/uploads_en/2020/11/shutterstock_342874121.jpg',
@@ -56,7 +63,11 @@ const demoPics = ['https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_c
     'https://upload.wikimedia.org/wikipedia/commons/9/9f/Playing_card_spade_K.svg']
 
 
-const lib3 = new TileConstructor('demo3', 180, 280)
+const lib3 = new TileConstructor({
+    container: 'demo3',
+    width: 180,
+    height: 280
+})
 for (let i = 1; i < 14; i++) {
     lib3.addTile({
         title: i,
@@ -115,7 +126,11 @@ const matchPics = ['static/cat_ball.jpg',
     'static/cat_ball.jpg',
     'static/cat_lie.jpg']
 
-const lib4 = new TileConstructor('demo4', 200, 200)
+const lib4 = new TileConstructor({
+    container: 'demo4',
+    width: 200,
+    height: 200
+})
 for (let i = 0; i < matchPics.length; i++) {
     lib4.addTile({
         title: 'Click me!',

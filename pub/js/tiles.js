@@ -5,23 +5,29 @@
 (function (global, document, $) {
 
     // this function is currently only in the scope of the anonymous function at the moment.
-    function TileConstructor(container, width = 100, height = 100, animate = true, cycle = false) {
+    function TileConstructor(params) {
         this.tiles = []
-        this.container = container
-        this.width = width
-        this.height = height
-        this.animate = animate
-        this.color_cycle = cycle
-        this.disabled = false
-        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        const maxTile = Math.floor(vw / (width + 35))
 
-        const canvas = $('#' + container)
+        // set params
+        this.container = params.container
+        if (this.container === undefined) {
+            throw 'Container must be specified!'
+        }
+        this.width = params.width === undefined ? 100 : params.width
+        this.height = params.height === undefined ? 100 : params.height
+        this.animate = params.animate === undefined ? true : params.animate
+        this.color_cycle = params.color_cycle === undefined ? false : params.color_cycle
+        this.disabled = false
+
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        const maxTile = Math.floor(vw / (this.width + 35))
+
+        const canvas = $('#' + this.container)
         canvas.css('display', 'grid')
         canvas.css('grid-gap', '30px')
         canvas.css('padding', '10px')
-        canvas.css('grid-template-columns', `${width}px `.repeat(maxTile))
-        canvas.css('grid-auto-rows', `${height}px`)
+        canvas.css('grid-template-columns', `${this.width}px `.repeat(maxTile))
+        canvas.css('grid-auto-rows', `${this.height}px`)
     }
 
     /* Start of private properties/functions */
