@@ -268,7 +268,7 @@
                 tile.onclick = (event) => {
                     const tile = this.tiles.find((element) => element.id === event.target.id)
                     if (!this.disabled && !tile.disabled) {
-                        window.open(clickLink)
+                        window.open(clickLink, '_self')
                     }
                 }
             } else if (alt_img) {
