@@ -1,6 +1,5 @@
 "use strict"
 
-// const lib = new TileConstructor('demo1', 300, 150, true, true)
 const lib = new TileConstructor({
     container: 'demo1',
     width: 300,
@@ -20,11 +19,10 @@ lib.addTile({
 })
 
 
-// const lib2 = new TileConstructor('demo2', 200, 100, true, false)
 const lib2 = new TileConstructor({
     container: 'demo2',
     width: 200,
-    height: 100
+    nodrag: true
 })
 
 lib2.addTile({

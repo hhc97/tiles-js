@@ -17,6 +17,7 @@
         this.height = params.height === undefined ? 100 : params.height
         this.animate = params.animate === undefined ? true : params.animate
         this.color_cycle = params.color_cycle === undefined ? false : params.color_cycle
+        this.nodrag = params.nodrag === undefined ? false : true
         this.disabled = false
 
         const tileGap = params.tile_gap === undefined ? 30 : params.tile_gap
@@ -231,7 +232,6 @@
             tile.style.borderRadius = '5px'
             tile.style.boxShadow = '0 0 3pt 2pt black'
             tile.style.textAlign = 'center'
-            tile.draggable = 'true'
             // add behavior for mouse hover events
             tile.onmouseenter = (event) => {
                 const target = event.target
@@ -284,9 +284,12 @@
                 }
             }
             // add drag and drop functionality
-            tile.ondrop = drop
-            tile.ondragover = (ev) => { ev.preventDefault() }
-            tile.ondragstart = drag
+            if (!this.nodrag) {
+                tile.draggable = 'true'
+                tile.ondrop = drop
+                tile.ondragover = (ev) => { ev.preventDefault() }
+                tile.ondragstart = drag
+            }
 
             if (img_src !== '') {
                 const img = document.createElement('img')
