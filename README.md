@@ -85,5 +85,5 @@ The parameters are provided in the form of a javascript object, so optional para
 
 ## API methods
 Once you have created an instance of `Tiles`, these are the API methods that can be called:
-- `Tiles`.`addTile({options})`
+- Tiles.`addTile({options})`
     - test
