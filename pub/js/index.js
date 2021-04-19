@@ -36,3 +36,8 @@ lib2.addTile({
     clickLink: './examples.html',
     img_src: 'static/examples.PNG'
 })
+lib2.addTile({
+    title: 'Download source',
+    clickLink: './js/tiles.js',
+    img_src: 'static/download.PNG'
+})
