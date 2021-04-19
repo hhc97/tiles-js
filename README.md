@@ -86,7 +86,7 @@ The parameters are provided in the form of a javascript object, so optional para
 ## API methods
 Once you have created an instance of `Tiles`, these are the API methods that can be called and their available options:
 - Tiles.`addTile({options})`
-    - `title`
+    - options.`title`
         - `Type`: `string`
         - `Default value`: `''`
         - `Optional`: `yes`
@@ -120,5 +120,6 @@ Once you have created an instance of `Tiles`, these are the API methods that can
     - Sorts the tiles in the current section by order of their creation.
 - Tiles.`shuffle()`
     - Shuffles the tiles in the current section randomly.
-- Tiles.`flip()`
+- Tiles.`flip(tileid)`
     - A tile may have a secondary image to show. The flip method swaps the current displayed image for the secondary image.
+    - `ti`
