@@ -3,6 +3,14 @@
 Final submission deployed at -> [https://tiles-js.herokuapp.com/](https://tiles-js.herokuapp.com/)
 
 
+## Quick Navigation
+- [Home](https://tiles-js.herokuapp.com/)
+- [Getting started](#getting-started)
+- [Constructors](#constructors)
+- [API](#api-methods)
+- [Examples](https://tiles-js.herokuapp.com/examples.html)
+
+
 ## Getting started
 To get started with tiles.js, you'll need to include [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and [tiles.js](https://tiles-js.herokuapp.com/js/tiles.js) in your HTML page as shown below:
 ```
@@ -147,3 +155,5 @@ Once you have created an instance of `Tiles`, these are the API methods that can
         - `Optional`: `no`
         - `Default value`: `false`
         - `Description`: This parameter specifies whether to propagate the effects of the `enableAll()` call to all the tiles in this section. If a tile has been disabled by a call to `disable()`, calling `enableAll(false)` will not enable that tile, but calling `enableAll(true)` will.
+
+[Back to top](#quick-navigation)
