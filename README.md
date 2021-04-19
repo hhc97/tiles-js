@@ -4,7 +4,9 @@ Final submission deployed at -> [https://tiles-js.herokuapp.com/](https://tiles-
 
 ## Getting started
 
-To get started with tiles.js, you'll need to include `jQuery` and `tiles.js` in your HTML page as shown:
+To get started with tiles.js, you'll need to include
+[jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and
+[tiles.js](https://tiles-js.herokuapp.com/js/tiles.js) in your HTML page as shown below:
 ```
 <!DOCTYPE html>
 <html lang="en">
