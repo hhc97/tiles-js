@@ -5,7 +5,8 @@ const lib = new TileConstructor({
     container: 'demo1',
     width: 300,
     height: 150,
-    color_cycle: true
+    color_cycle: true,
+    tile_gap: 80
 })
 
 lib.addTile({
