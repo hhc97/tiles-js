@@ -41,7 +41,7 @@ new Tiles({
     num_horizontal: 2
 })
 ```
-The parameters are provided in the form of a javascript object, so optional parameters can be left if desired.
+The parameters are provided in the form of a javascript object, so optional parameters can be left if desired.  
 **Required options**
 - **container**
     - `Type`: `string`
