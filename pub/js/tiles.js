@@ -16,6 +16,7 @@
         this.width = params.width === undefined ? 100 : params.width
         this.height = params.height === undefined ? 100 : params.height
         this.animate = params.animate === undefined ? true : params.animate
+        this.animate_factor = params.animate_factor === undefined ? 1.05 : params.animate_factor
         this.color_cycle = params.color_cycle === undefined ? false : params.color_cycle
         this.nodrag = params.nodrag === undefined ? false : true
         this.disabled = false
@@ -248,7 +249,8 @@
                     const currW = parseInt(target.style.width)
                     const currH = parseInt(target.style.height)
                     _animateChange(target.id, currW, currH,
-                        Math.ceil(1.11 * this.width), Math.ceil(1.11 * this.height), tile)
+                        Math.ceil(this.animate_factor * this.width),
+                        Math.ceil(this.animate_factor * this.height), tile)
                 }
             }
             tile.onmouseleave = (event) => {

@@ -2,7 +2,8 @@
 
 const lib = new TileConstructor({
     container: 'demo1',
-    color_cycle: true
+    color_cycle: true,
+    animate_factor: 1.1
 })
 lib.addTile({ title: 'Here' })
 lib.addTile({ title: 'are' })
