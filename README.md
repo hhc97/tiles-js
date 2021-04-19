@@ -28,7 +28,7 @@ To get started with tiles.js, you'll need to include [jQuery](https://ajax.googl
 ```
 By default, tiles.js assigns itself to the global `Tiles` variable when loaded. If the `Tiles` variable is already in use, it will not be overwritten.  
 Once loaded, you can get an instance of Tiles by calling its constructor:
-```
+```javascript
 const tiles = new Tiles({container: 'id'})
 ```
 Note that you **must** create a new instance of `Tiles` for each section of tiles that you want to create, or there could be unintended behavior.
