@@ -24,7 +24,8 @@ const lib = new Tiles({
     height: 150,
     color_cycle: true,
     tile_gap: 80,
-    animate_factor: 1.08
+    animate_factor: 1.08,
+    nodrag: true
 })
 
 lib.addTile({
