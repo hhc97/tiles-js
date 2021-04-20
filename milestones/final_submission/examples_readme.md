@@ -3,6 +3,7 @@
 ## Quick Navigation
 - [Home](https://tiles-js.herokuapp.com/)
 - [Basic demo](#basic-functionality)
+- [Online shop](#e-commerce)
 - [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
@@ -30,6 +31,44 @@ lib.addTile({ title: 'tiles.' })
 const button = $('#add_demo1')
 button[0].addEventListener("click", function () {
     lib.addTile({ title: 'new tile' })
+})
+```
+Rendered output:  
+
+### E-commerce
+Perhaps you are selling items in an online store and would like a quick way to display the items you have for sale, you can quickly display your items with tiles and even customize their hover color:
+```javascript
+// instantiate a new Tiles instance
+const lib2 = new Tiles({
+    container: 'demo',
+    width: 150,
+    height: 150
+})
+lib2.addTile({
+    title: 'Orange',
+    img_src: 'https://www.mz-store.com/blog/wp-content/uploads_en/2020/11/shutterstock_342874121.jpg',
+    hover_color: 'orange',
+    clickLink: ''  // remember to add links to each product page
+})
+lib2.addTile({
+    title: 'Apple',
+    img_src: 'https://i2.wp.com/ceklog.kindel.com/wp-content/uploads/2013/02/firefox_2018-07-10_07-50-11.png?w=641&ssl=1',
+    hover_color: 'red'
+})
+lib2.addTile({
+    title: 'Lychee',
+    img_src: 'https://images-prod.healthline.com/hlcmsresource/images/AN_images/lychees-1296x728-feature.jpg',
+    hover_color: 'pink'
+})
+lib2.addTile({
+    title: 'Avocado',
+    img_src: 'https://www.tasteofhome.com/wp-content/uploads/2018/02/shutterstock_263066297.jpg',
+    hover_color: 'limegreen'
+})
+lib2.addTile({
+    title: 'Grapes!',
+    img_src: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/34/2019/07/marselan-wiki-min.jpg',
+    hover_color: 'purple'
 })
 ```
 Rendered output:  

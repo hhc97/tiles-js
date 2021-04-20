@@ -18,13 +18,14 @@ button[0].addEventListener("click", function () {
 
 const lib2 = new Tiles({
     container: 'demo2',
-    width: 200,
-    height: 200
+    width: 150,
+    height: 150
 })
 lib2.addTile({
     title: 'Orange',
     img_src: 'https://www.mz-store.com/blog/wp-content/uploads_en/2020/11/shutterstock_342874121.jpg',
-    hover_color: 'orange'
+    hover_color: 'orange',
+    clickLink: ''
 })
 lib2.addTile({
     title: 'Apple',
