@@ -2,6 +2,7 @@
 
 ## Quick Navigation
 - [Home](https://tiles-js.herokuapp.com/)
+- [Documentation](https://tiles-js.herokuapp.com/api-v1.html)
 - [Basic demo](#basic-functionality)
 - [Online shop](#e-commerce)
 - [Shuffle and sort tiles](#shuffle-and-sort)
@@ -10,7 +11,6 @@
 - [Tiles as decorations](#tiles-as-decorations)
 - [Displaying pictures](#displaying-pictures)
 - [Future plans](#future-plans)
-- [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
 ### Basic functionality
