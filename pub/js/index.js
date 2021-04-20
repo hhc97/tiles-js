@@ -1,5 +1,23 @@
 "use strict"
 
+const contact = new Tiles({
+    container: 'contact',
+    height: 30,
+    width: 30,
+    tile_gap: 15,
+    nodrag: true
+})
+contact.addTile({
+    img_src: 'https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png',
+    clickLink: 'https://github.com/hhc97',
+    hover_color: 'gray'
+})
+contact.addTile({
+    img_src: 'https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg',
+    clickLink: 'https://www.linkedin.com/in/hhc97/',
+    hover_color: 'gray'
+})
+
 const lib = new Tiles({
     container: 'demo1',
     width: 300,
