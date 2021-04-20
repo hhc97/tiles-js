@@ -2122,14 +2122,14 @@ h6 {
 
 a {
     cursor: pointer;
-    color: #35D7BB;
+    color: #2590cc;
     text-decoration: none
 }
 
 a:hover,
 a:focus {
     border-bottom-color: #35D7BB;
-    color: #dff9f4
+    color: #722086
 }
 
 img {
