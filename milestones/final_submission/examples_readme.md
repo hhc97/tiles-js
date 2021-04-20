@@ -5,6 +5,7 @@
 - [Basic demo](#basic-functionality)
 - [Online shop](#e-commerce)
 - [Shuffle and sort tiles](#shuffle-and-sort)
+- [Disabling and flipping tiles](#disabling-and-flipping-tiles)
 - [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
@@ -115,5 +116,69 @@ const sort = $('#sort')
 sort[0].addEventListener("click", function () {
     lib3.sort()
 })
+```
+Rendered output:  
+
+### Disabling and flipping tiles
+If you are creating a game with tiles and there is a need to periodically disable and enable tiles based on the rules of the game, you can do that too. Here is a demonstration with a simple matching game, where the goal is to flip two tiles that have the same image. If the images are not the same, then both tiles flip back. We can see why we would need to disable some tiles to enable the correct operation of this game. `tiles.js` also allows you to pass in callback functions which are called when the tile is clicked. For this demonstration, a demo callback function is provided, but you'll have to customize your own for your specific use case.
+```javascript
+// helper for synchronous waiting
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+let prev_tile = null
+
+// function to pass in as a callback to the tile
+async function demo(data) {
+    // game logic
+    lib4.disable(data.id)
+    if (!prev_tile) {
+        prev_tile = {
+            id: data.id,
+            img: data.curr_img
+        }
+        return
+    }
+    let score = document.getElementById('score')
+    if (data.id !== prev_tile.id && data.curr_img === prev_tile.img) {
+        score.innerText = parseInt(score.innerText) + 10
+        prev_tile = null
+    } else {
+        lib4.disableAll()
+        await sleep(800)
+        lib4.enableAll()
+        if (prev_tile && data) {
+            lib4.flip(prev_tile.id)
+            lib4.flip(data.id)
+            lib4.enable(prev_tile.id)
+            lib4.enable(data.id)
+            score.innerText = parseInt(score.innerText) - 5
+        }
+        prev_tile = null
+    }
+}
+// game images
+const matchPics = ['static/cat_ball.jpg',
+    'static/cat_walk.jpg',
+    'static/cat_walk.jpg',
+    'static/cat_lie.jpg',
+    'static/cat_ball.jpg',
+    'static/cat_lie.jpg']
+// instantiate a new Tiles instance
+const lib4 = new Tiles({
+    container: 'demo4',
+    width: 200,
+    height: 200,
+    num_horizontal: 3
+})
+for (let i = 0; i < matchPics.length; i++) {
+    lib4.addTile({
+        title: 'Click me!',
+        img_src: 'static/question_mark.PNG',
+        alt_img: matchPics[i],  // set the alt_image for when the tile is clicked
+        click_callback: demo  // pass in the callback function
+    })
+}
 ```
 Rendered output:  
