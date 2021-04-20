@@ -7,6 +7,7 @@
 - [Shuffle and sort tiles](#shuffle-and-sort)
 - [Disabling and flipping tiles](#disabling-and-flipping-tiles)
 - [Tiles as link icons](#tiles-as-link-icons)
+- [Tiles as decorations](#tiles-as-decorations)
 - [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
@@ -21,7 +22,7 @@ Once you have a div ready, you can write a few simple lines of code to make some
 ```javascript
 // instantiate a new Tiles instance
 const lib = new Tiles({
-    container: 'demo',
+    container: 'demo1',
     animate_factor: 1.1,
     num_horizontal: 6  // caps the max number of horizontal tiles
 })
@@ -43,7 +44,7 @@ Perhaps you are selling items in an online store and would like a quick way to d
 ```javascript
 // instantiate a new Tiles instance
 const lib2 = new Tiles({
-    container: 'demo',
+    container: 'demo2',
     width: 150,
     height: 150
 })
@@ -211,5 +212,26 @@ lib5.addTile({
     clickLink: 'https://stackoverflow.com/',
     hover_color: 'gray'
 })
+```
+Rendered output:  
+
+### Tiles as decorations
+You can even use tiles as a background for your website or as little decorations. The options available in the constructor allow you to easily customize their size and positioning.
+```javascript
+// instantiate a new Tiles instance
+const lib6 = new Tiles({
+    container: 'demo6',
+    color_cycle: true,  // turn on color cycling for a nice effect
+    animate: false,
+    tile_gap: 8,
+    nodrag: true,
+    height: 40,
+    width: 40,
+    num_horizontal: 18
+})
+// a simple for loop that adds decorative tiles
+for (let i = 0; i < 90; i++) {
+    lib6.addTile()
+}
 ```
 Rendered output:  
