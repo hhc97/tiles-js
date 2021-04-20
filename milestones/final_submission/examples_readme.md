@@ -16,7 +16,7 @@
 ### Basic functionality
 The simplest thing you can do with this library is just to create a bunch of tiles.  
 
-Note that before you get started, you should have an emtpy `<div>` set up in your html file with a unique `id` that you can pass to the library. It can be as simple as this:
+Note that before you get started, you should have an empty `<div>` set up in your html file with a unique `id` that you can pass to the library. It can be as simple as this:
 ```html
 <div id='demo'></div>
 ```
