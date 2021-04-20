@@ -25,4 +25,4 @@ const tiles = new Tiles({container: 'id'})
 ```
 Note that you **must** create a new instance of `Tiles` for each section of tiles that you want to create, or there could be unintended behavior.
 
-For more detailed information and usage examples, view the [documentation](https://tiles-js.herokuapp.com/api-v1.html).
+For more detailed information and usage examples, view the [documentation](https://tiles-js.herokuapp.com/api-v1.html) and [examples](https://tiles-js.herokuapp.com/examples.html).
