@@ -2,7 +2,6 @@
 
 const lib = new Tiles({
     container: 'demo1',
-    color_cycle: true,
     animate_factor: 1.1
 })
 lib.addTile({ title: 'Here' })
@@ -66,8 +65,9 @@ const demoPics = ['https://upload.wikimedia.org/wikipedia/commons/2/25/Playing_c
 
 const lib3 = new Tiles({
     container: 'demo3',
-    width: 180,
-    height: 280
+    width: 90,
+    height: 140,
+    num_horizontal: 7
 })
 for (let i = 1; i < 14; i++) {
     lib3.addTile({
@@ -89,6 +89,8 @@ sort[0].addEventListener("click", function () {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
 
 let prev_tile = null
 
@@ -130,7 +132,8 @@ const matchPics = ['static/cat_ball.jpg',
 const lib4 = new Tiles({
     container: 'demo4',
     width: 200,
-    height: 200
+    height: 200,
+    num_horizontal: 3
 })
 for (let i = 0; i < matchPics.length; i++) {
     lib4.addTile({
@@ -164,3 +167,42 @@ lib5.addTile({
     clickLink: 'https://stackoverflow.com/',
     hover_color: 'gray'
 })
+
+const lib6 = new Tiles({
+    container: 'demo6',
+    color_cycle: true,
+    animate: false,
+    tile_gap: 8,
+    nodrag: true,
+    height: 40,
+    width: 40,
+    num_horizontal: 18
+})
+
+for (let i = 0; i < 90; i++) {
+    lib6.addTile()
+}
+
+
+const vacationPics = ['https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-mont-st-michel.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-chateau-de-chenonceau.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-calanques-national-park.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-amiens-cathedral.jpg']
+
+const lib7 = new Tiles({
+    container: 'demo7',
+    width: 300,
+    height: 200,
+    num_horizontal: 3,
+    nodrag: true,
+    animate_factor: 1.05
+}
+)
+for (let i = 1; i < 7; i++) {
+    lib7.addTile({
+        img_src: vacationPics[i - 1],
+        hover_color: 'salmon'
+    })
+}
