@@ -3,7 +3,7 @@
 const lib = new Tiles({
     container: 'demo1',
     animate_factor: 1.1,
-    num_horizontal: 8
+    num_horizontal: 6
 })
 lib.addTile({ title: 'Here' })
 lib.addTile({ title: 'are' })

@@ -18,7 +18,7 @@ Once you have a div ready, you can write a few simple lines of code to make some
 const lib = new Tiles({
     container: 'demo',
     animate_factor: 1.1,
-    num_horizontal: 8  // caps the max number of horizontal tiles
+    num_horizontal: 6  // caps the max number of horizontal tiles
 })
 lib.addTile({ title: 'Here' })
 lib.addTile({ title: 'are' })
