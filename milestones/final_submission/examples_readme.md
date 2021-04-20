@@ -31,4 +31,4 @@ button[0].addEventListener("click", function () {
     lib.addTile({ title: 'new tile' })
 })
 ```
-Result:  
+Rendered output:  
