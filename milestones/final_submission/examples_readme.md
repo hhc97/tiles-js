@@ -8,6 +8,8 @@
 - [Disabling and flipping tiles](#disabling-and-flipping-tiles)
 - [Tiles as link icons](#tiles-as-link-icons)
 - [Tiles as decorations](#tiles-as-decorations)
+- [Displaying pictures](#displaying-pictures)
+- [Future plans](#future-plans)
 - [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
@@ -235,3 +237,37 @@ for (let i = 0; i < 90; i++) {
 }
 ```
 Rendered output:  
+
+### Displaying pictures
+You can also easily create tiles without text and have them just display vivid full-frame pictures. You can customize the size of each tile through the constructor and also customize how many of them to display in a row, as well as being able to customize their highlight color and hover animation.
+```javascript
+const vacationPics = ['https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-mont-st-michel.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-versailles-gardens.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-chateau-de-chenonceau.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-calanques-national-park.jpg',
+    'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-amiens-cathedral.jpg']
+
+// instantiate a new Tiles instance
+const lib7 = new Tiles({
+    container: 'demo7',
+    width: 300,
+    height: 200,
+    num_horizontal: 3,
+    nodrag: true,
+    animate_factor: 1.05  // customize how much each tile grows on hover
+})
+// add the pictures
+for (let i = 1; i < 7; i++) {
+    lib7.addTile({
+        img_src: vacationPics[i - 1],
+        hover_color: 'salmon'
+    })
+}
+```
+Rendered output:  
+
+### Future plans
+Tiles.js was made as the final project in an introductory web programming course at the University of Toronto. While there are no current future plans for development, you can already accomplish a lot with Tiles!  
+
+[Back to top](#quick-navigation)
