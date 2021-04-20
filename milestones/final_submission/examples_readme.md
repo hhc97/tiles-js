@@ -2,6 +2,7 @@
 
 ## Quick Navigation
 - [Home](https://tiles-js.herokuapp.com/)
+- [Basic demo](#basic-functionality)
 - [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
