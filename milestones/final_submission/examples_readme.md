@@ -6,6 +6,7 @@
 - [Online shop](#e-commerce)
 - [Shuffle and sort tiles](#shuffle-and-sort)
 - [Disabling and flipping tiles](#disabling-and-flipping-tiles)
+- [Tiles as link icons](#tiles-as-link-icons)
 - [Examples](https://tiles-js.herokuapp.com/examples.html)
 
 
@@ -180,5 +181,35 @@ for (let i = 0; i < matchPics.length; i++) {
         click_callback: demo  // pass in the callback function
     })
 }
+```
+Rendered output:  
+
+### Tiles as link icons
+You can use small tiles to act as links to your own social media pages or other services. A simple demo can be constructed as follows:
+```javascript
+// instantiate a new Tiles instance
+const lib5 = new Tiles({
+    container: 'demo5',
+    height: 30,
+    width: 30
+})
+// add all relevant links and their images
+lib5.addTile({
+    img_src: 'https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png',
+    clickLink: 'https://github.com/',
+    hover_color: 'gray'
+})
+
+lib5.addTile({
+    img_src: 'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png',
+    clickLink: 'https://google.com/',
+    hover_color: 'gray'
+})
+
+lib5.addTile({
+    img_src: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Stack_Overflow_icon.svg',
+    clickLink: 'https://stackoverflow.com/',
+    hover_color: 'gray'
+})
 ```
 Rendered output:  
