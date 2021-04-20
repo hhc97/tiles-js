@@ -8,7 +8,7 @@ const contact = new Tiles({
     nodrag: true
 })
 contact.addTile({
-    img_src: 'https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png',
+    img_src: 'https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png',
     clickLink: 'https://github.com/hhc97',
     hover_color: 'gray'
 })
