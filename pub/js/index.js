@@ -9,7 +9,7 @@ const contact = new Tiles({
 })
 contact.addTile({
     img_src: 'https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png',
-    clickLink: 'https://github.com/hhc97',
+    clickLink: 'https://github.com/hhc97/tiles-js',
     hover_color: 'gray'
 })
 contact.addTile({
