@@ -28,3 +28,9 @@ body {
 #demo2 {
     margin-top: 100px;
 }
+
+#copyright {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
