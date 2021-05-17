@@ -1,10 +1,10 @@
 # tiles.js
 
-Final submission deployed at -> [https://tiles-js.herokuapp.com/](https://tiles-js.herokuapp.com/)
+Landing page -> [https://hhc97.github.io/tiles-js/pub/](https://hhc97.github.io/tiles-js/pub/)
 
 
 ## Getting started
-To get started with tiles.js, you'll need to include [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and [tiles.js](https://tiles-js.herokuapp.com/js/tiles.js) in your HTML source as shown below:
+To get started with tiles.js, you'll need to include [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and [tiles.js](https://hhc97.github.io/tiles-js/pub/js/tiles.js) in your HTML source as shown below:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ To get started with tiles.js, you'll need to include [jQuery](https://ajax.googl
     <!-- first load jQuery -->
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- then load tiles.js -->
-    <script defer type="text/javascript" src='https://tiles-js.herokuapp.com/js/tiles.js'></script>
+    <script defer type="text/javascript" src='https://hhc97.github.io/tiles-js/pub/js/tiles.js'></script>
     <!-- then load a script that depends on tiles.js -->
     <script defer type="text/javascript" src='js/examples.js'></script>
 </head>
@@ -25,4 +25,4 @@ const tiles = new Tiles({container: 'id'})
 ```
 Note that you **must** create a new instance of `Tiles` for each section of tiles that you want to create, or there could be unintended behavior.
 
-For more detailed information and usage examples, view the [documentation](https://tiles-js.herokuapp.com/api-v1.html) and [examples](https://tiles-js.herokuapp.com/examples.html).
+For more detailed information and usage examples, view the [documentation](https://hhc97.github.io/tiles-js/pub/api-v1.html) and [examples](https://hhc97.github.io/tiles-js/pub/examples.html).
