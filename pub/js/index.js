@@ -18,14 +18,15 @@ contact.addTile({
     hover_color: 'gray'
 })
 
+// get the viewport height to support mobile content
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 
 const lib = new Tiles({
     container: 'demo1',
-    width: Math.floor(vw * 0.2),
-    height: Math.floor(vw * 0.1),
+    width: Math.floor(vw * 0.26),
+    height: Math.floor(vw * 0.13),
     color_cycle: true,
-    tile_gap: 80,
+    tile_gap: Math.floor(vw * 0.06),
     animate_factor: 1.08,
     nodrag: true
 })
@@ -48,18 +49,21 @@ const lib2 = new Tiles({
     nodrag: true
 })
 
+// if viewport is too narrow, don't display titles
+const showTitle = vw >= 1000
+
 lib2.addTile({
-    title: 'API / Documentation',
+    title: showTitle ? 'API / Documentation' : '',
     img_src: 'static/documentation.PNG',
     clickLink: './api-v1.html'
 })
 lib2.addTile({
-    title: 'Usage examples',
+    title: showTitle ? 'Usage examples' : '',
     clickLink: './examples.html',
     img_src: 'static/examples.PNG'
 })
 lib2.addTile({
-    title: 'Download source',
+    title: showTitle ? 'Download source' : '',
     clickLink: './js/tiles.js',
     img_src: 'static/download.PNG'
 })
