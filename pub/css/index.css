@@ -2,19 +2,19 @@ body {
     background-color: lightblue;
 }
 
+#contact {
+    position: fixed;
+    top: 0%;
+    left: 100%;
+    margin-left: -95px;
+}
+
 #allContent {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: yellow;
-}
-
-#contact {
-    position: fixed;
-    top: 0%;
-    left: 100%;
-    margin-left: -95px;
 }
 
 #welcomeText {
