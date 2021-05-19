@@ -23,8 +23,8 @@ const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth
 
 const lib = new Tiles({
     container: 'demo1',
-    width: Math.floor(vw * 0.26),
-    height: Math.floor(vw * 0.13),
+    width: Math.floor(vw * 0.25),
+    height: Math.floor(vw * 0.125),
     color_cycle: true,
     tile_gap: Math.floor(vw * 0.06),
     animate_factor: 1.08,
