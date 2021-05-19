@@ -57,6 +57,8 @@
         let elem = document.getElementById(id);
         let w = startW
         let h = startH
+        // clear any current animation before starting a new one
+        clearInterval(obj.stopID)
         let animateID = setInterval(animate, 5);
         obj.stopID = animateID
         function animate() {
@@ -244,8 +246,6 @@
                 target.style.zIndex = 2
                 if (this.animate) {
                     const tile = this.tiles.find((element) => element.id === target.id)
-                    // first stop any current animations, then start the new one
-                    clearInterval(tile.stopID)
                     const currW = parseInt(target.style.width)
                     const currH = parseInt(target.style.height)
                     _animateChange(target.id, currW, currH,
@@ -261,8 +261,6 @@
                 target.style.zIndex = 1
                 if (this.animate) {
                     const tile = this.tiles.find((element) => element.id === target.id)
-                    // first stop any current animations, then start the new one
-                    clearInterval(tile.stopID)
                     const currW = parseInt(target.style.width)
                     const currH = parseInt(target.style.height)
                     _animateChange(target.id, currW, currH, this.width, this.height, tile)
