@@ -18,10 +18,12 @@ contact.addTile({
     hover_color: 'gray'
 })
 
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+
 const lib = new Tiles({
     container: 'demo1',
-    width: 300,
-    height: 150,
+    width: Math.floor(vw * 0.2),
+    height: Math.floor(vw * 0.1),
     color_cycle: true,
     tile_gap: 80,
     animate_factor: 1.08,
@@ -41,7 +43,8 @@ lib.addTile({
 
 const lib2 = new Tiles({
     container: 'demo2',
-    width: 200,
+    width: Math.floor(vw * 0.16),
+    height: Math.floor(vw * 0.08),
     nodrag: true
 })
 
