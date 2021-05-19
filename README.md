@@ -1,6 +1,6 @@
 # tiles.js
 
-Landing page -> [https://hhc97.github.io/tiles-js/pub/](https://hhc97.github.io/tiles-js/pub/)
+Landing page -> [https://hhc97.github.io/tiles-js/pub/](https://hhc97.github.io/tiles-js/pub/index.html)
 
 
 ## Getting started
