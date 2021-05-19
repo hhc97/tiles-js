@@ -4,7 +4,7 @@ Landing page -> [https://hhc97.github.io/tiles-js/pub/](https://hhc97.github.io/
 
 
 ## Getting started
-To get started with tiles.js, you'll need to include [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and [tiles.js](https://hhc97.github.io/tiles-js/pub/js/tiles.js) in your HTML source as shown below:
+To get started with tiles.js, you'll need to include [jQuery](https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js) and [tiles.js](https://github.com/hhc97/tiles-js/blob/main/pub/js/tiles.js) in your HTML source as shown below:
 ```html
 <!DOCTYPE html>
 <html lang="en">
